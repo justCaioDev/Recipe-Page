@@ -12,27 +12,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 150%;
 }
 
-body {
+body {  
     width: 100%;
     height: 100vh;
-    background-color: hsl(0, 0%, 100%);
+    
     font-family: 'Outfit';
+    background-color: hsl(30, 54%, 90%);
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 40px;
+    justify-content: center;
+    padding-block: 64px;
+}
+
+.recipe-page {
+    width: 100%;
+    max-width: 750px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px;
+    border-radius: 24px;
+
+    background-color: white;
 }
 
 main img {
     width: 100%;
-    max-width: 1200px;
-    margin-bottom: 40px;
-    border-radius: 20px;
+    margin-bottom: 32px;
+    border-radius: 14px;
 }
 
 .mobile-container {
@@ -44,48 +59,53 @@ main img {
 .recipe-info {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
 }
 
 .recipe-title {
     font-family: 'Young';
-    font-size: 52px;
-    color: hsl(24, 5%, 18%);
+    font-size: 38px;
     font-weight: 400;
+
+    color: hsl(24, 5%, 18%);
 }
 
 .recipe-description {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
+    margin-bottom: 28px;
+
     color: hsl(30, 10%, 34%);
 }
 
 .prep-time {
-    padding: 40px;
-    background-color: hsla(332, 100%, 68%, 0.101);
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-block: 40px;
+
+    gap: 16px;
+    padding: 32px;
+    border-radius: 18px;
+
+    background-color: hsl(330, 100%, 98%);
 }
 
 .prep-title {
     color: hsl(332, 51%, 32%);
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .prep-list {
-    padding-inline: 30px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 16px;
+    padding-inline: 28px;
 }
 
 .prep-list li {
-    font-size: 20px;
-    padding-inline-start: 20px;
+    font-size: 16px;
     font-weight: 400;
+    padding-inline-start: 20px;
+
     color: hsl(30, 10%, 34%);
 }
 
@@ -101,7 +121,7 @@ main img {
 .title {
     color: hsl(14, 45%, 36%);
     font-family: 'Young';
-    font-size: 38px;
+    font-size: 28px;
     font-weight: 500;
 }
 
@@ -109,24 +129,24 @@ main img {
  .instructions {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 16px;
     padding-block: 40px;
-    border-bottom: 1px solid hsl(30, 10%, 34%);
+    border-bottom: 1px solid hsl(30, 18%, 87%);
 }
 
 .ingredients-list,
  .instructions-list {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding-inline-start: 40px;
+    gap: 16px;
+    padding-inline-start: 20px;
 }
 
 .ingredients-list li, 
  .instructions-list li {
-    font-size: 20px;
+    font-size: 16px;
     padding-inline-start: 20px;
-    color: hsl(24, 5%, 18%);
+   color: hsl(30, 10%, 34%);
 }
 
 .ingredients-list li::marker,
@@ -138,43 +158,50 @@ main img {
 .nutrition {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding-block-start: 40px;
+    padding-block-start: 20px;
 }
 
 .nutrition-description {
-    font-size: 20px;
-    color: hsl(24, 5%, 18%);
+    font-size: 16px;
+    margin-block: 14px;
+    color: hsl(30, 10%, 34%);
 }
 
 .calories-row,
  .carbs-row,
   .protein-row {
     display: flex;
-    padding: 20px 40px;
-    border-bottom: 1px solid hsl(30, 10%, 34%);
+    padding: 18px 24px;
+    border-bottom: 1px solid hsl(30, 18%, 87%);
 }
 
 .fat-row {
     display: flex;
-    padding: 20px 40px;
+    padding: 18px 24px;
 }
 
 .label {
     flex: 1;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    color:  hsl(30, 10%, 34%);
 }
 
 .value {
     flex: 1;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     color: hsl(14, 45%, 36%);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 750px) {
     main {
         padding-block: 0;
+    }
+
+    .recipe-page {
+        border-radius: 0;
+        padding: 0;
     }
 
     main img {
@@ -182,11 +209,12 @@ main img {
     }
 
     .mobile-container {
-        padding-inline: 40px;
+        padding-inline: 28px;
     }
     
     .recipe-title {
-        font-size: 34px;
+        font-size: 32px;
+        line-height: 100%;
     }
 
     .prep-time {
@@ -201,13 +229,18 @@ main img {
          .label,
           .value {
         font-size: 16px;
+        color: hsl(30, 10%, 34%);
+    }
+
+    .value {
+        color: hsl(14, 45%, 36%);
     }
 
     .prep-time,
      .prep-list,
       .ingredients-list,
        .instructions-list {
-        gap: 20px;
+        gap: 16px;
     }
 
     .prep-list li span,
@@ -215,4 +248,14 @@ main img {
       .value {
         font-weight: 700;
     }
+
+    .calories-row, .carbs-row, .protein-row {
+        padding: 14px 18px;
+        border-bottom: 1px solid hsl(30, 18%, 87%);
+    }
+
+    .fat-row {
+        padding: 14px 18px;
+    }
+
 }
